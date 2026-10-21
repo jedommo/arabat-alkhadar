@@ -149,12 +149,14 @@
             animation-delay: 1.2s;
         }
 
-        .pill-badge:hover {
-            transform: translateY(-4px) scale(1.08) !important;
+        .pill-badge:hover,
+        .pill-badge:focus {
+            transform: none !important;
+            animation-play-state: paused;
         }
 
         .pill-badge:active {
-            transform: scale(0.95) !important;
+            transform: none !important;
         }
 
         .pill-badge .pill-emoji {
@@ -180,8 +182,10 @@
             animation-delay: 1.3s;
         }
 
-        .pill-badge:hover .pill-emoji {
-            transform: scale(1.25) rotate(12deg);
+        .pill-badge:hover .pill-emoji,
+        .pill-badge:focus .pill-emoji {
+            transform: none !important;
+            animation-play-state: paused;
         }
 
         @keyframes pillWave {
@@ -554,14 +558,15 @@
             }
         }
 
-        .branch-btn:hover {
-            transform: scale(1.1) !important;
-            filter: drop-shadow(0 0 14px rgba(16, 185, 129, 1)) drop-shadow(0 0 22px rgba(52, 211, 153, 0.8)) !important;
-            z-index: 15;
+        .branch-btn:hover,
+        .branch-btn:focus {
+            transform: none !important;
+            filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.9)) !important;
+            z-index: 5;
         }
 
         .branch-btn:active {
-            transform: scale(0.95) !important;
+            transform: none !important;
         }
 
         /* ==========================================================
