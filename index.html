@@ -456,53 +456,134 @@
         .branch-btn:active {
             transform: scale(0.95) !important;
         }
+
+        /* ==========================================================
+           News Ticker / Marquee (شريط إخباري متحرك مع حدود مضيئة)
+           ========================================================== */
+        .news-ticker-container {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            user-select: none;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-radius: 1rem;
+            padding: 0.35rem 0.5rem;
+            height: 2.45rem;
+        }
+
+        .ticker-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, #059669, #10b981);
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 900;
+            padding: 0.28rem 0.55rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 6px rgba(16, 185, 129, 0.35);
+            z-index: 2;
+        }
+
+        .news-ticker-track {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+        }
+
+        .ticker-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 1.5rem;
+            animation: marqueeScroll 34s linear infinite;
+            will-change: transform;
+            white-space: nowrap;
+        }
+
+        .news-ticker-container:hover .ticker-content,
+        .news-ticker-container:active .ticker-content {
+            animation-play-state: paused;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #1e293b;
+            flex-shrink: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .ticker-star {
+            color: #f59e0b;
+            font-size: 0.65rem;
+            filter: drop-shadow(0 0 3px rgba(245, 158, 11, 0.8));
+        }
+
+        @keyframes marqueeScroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
     </style>
 </head>
-<body class="text-slate-800 antialiased relative selection:bg-emerald-500 selection:text-white flex flex-col justify-between">
+<body class="text-slate-800 antialiased relative selection:bg-emerald-500 selection:text-white flex flex-col items-center">
 
     <!-- Ambient Animated RGB Screen Edge Frame (إطار إضاءة RGB نيون حول حواف الشاشة) -->
     <div class="rgb-screen-border"></div>
 
     <!-- Main Container -->
-    <main class="w-full max-w-md mx-auto px-3.5 sm:px-4 py-5 sm:py-8 flex-grow flex flex-col justify-center">
+    <main class="w-full max-w-md mx-auto px-3.5 sm:px-4 pt-4 sm:pt-6 pb-2">
 
         <!-- Header / Hero Section -->
         <header class="text-center mb-5">
-            <!-- Animated Logo Container with RGB Glow -->
-            <div class="relative inline-block mb-3 sm:mb-4">
-                <div class="w-24 h-24 sm:w-28 sm:h-28 mx-auto rounded-3xl rgb-border p-1 shadow-xl transition-transform hover:scale-105 duration-300">
-                    <div class="w-full h-full bg-white rounded-[22px] flex flex-col items-center justify-center p-1 overflow-hidden border border-emerald-100 relative">
-                        <img id="mainLogo" 
-                             src="https://i.postimg.cc/MKpJgVwq/ar.jpg" 
-                             alt="شعار عربة الخضار" 
-                             class="w-full h-full object-contain rounded-[18px] transition-all duration-300"
-                             onerror="handleLogoError(this)"
-                             onload="handleLogoSuccess(this)">
-                        
-                        <!-- بديل أيقونة في حال تعذر تحميل رابط الصورة -->
-                        <div id="logoFallback" class="hidden w-full h-full flex-col items-center justify-center p-2 text-center">
-                            <i class="fa-solid fa-cart-shopping text-emerald-600 text-2xl sm:text-3xl mb-1 drop-shadow"></i>
-                            <span class="text-[11px] font-black text-amber-600 tracking-wider font-tajawal">طازج ويومي</span>
+            <!-- Header Brand Row: Logo on Right, Name Next to it -->
+            <div class="flex items-center justify-center gap-2.5 sm:gap-3.5 mb-2.5 sm:mb-3">
+                <!-- 1. Animated Logo Container with RGB Glow (Right) -->
+                <div class="relative flex-shrink-0">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl rgb-border p-0.5 sm:p-1 shadow-lg transition-transform hover:scale-105 duration-300">
+                        <div class="w-full h-full bg-white rounded-[13px] sm:rounded-[15px] flex flex-col items-center justify-center p-1 overflow-hidden border border-emerald-100 relative">
+                            <img id="mainLogo" 
+                                 src="https://i.postimg.cc/MKpJgVwq/ar.jpg" 
+                                 alt="شعار عربة الخضار" 
+                                 class="w-full h-full object-contain rounded-[11px] sm:rounded-[13px] transition-all duration-300"
+                                 onerror="handleLogoError(this)"
+                                 onload="handleLogoSuccess(this)">
+                            
+                            <!-- بديل أيقونة في حال تعذر تحميل رابط الصورة -->
+                            <div id="logoFallback" class="hidden w-full h-full flex-col items-center justify-center p-1 text-center">
+                                <i class="fa-solid fa-cart-shopping text-emerald-600 text-xl mb-0.5 drop-shadow"></i>
+                                <span class="text-[9px] font-black text-amber-600 tracking-wider font-tajawal">طازج</span>
+                            </div>
                         </div>
                     </div>
+                    <!-- Mini Badge -->
+                    <span class="absolute -bottom-1 -left-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md border-2 border-white flex items-center gap-0.5">
+                        <i class="fa-solid fa-leaf text-lime-200 text-[8px]"></i> 100%
+                    </span>
                 </div>
-                <!-- Mini Badge -->
-                <span class="absolute -bottom-1.5 -left-1.5 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full shadow-md border-2 border-white flex items-center gap-1">
-                    <i class="fa-solid fa-leaf text-lime-200"></i> طبيعي 100%
-                </span>
-            </div>
 
-            <!-- Titles with Dazzling Animation & Shopping Cart Icons -->
-            <div class="mt-1 mb-2">
-                <h1 class="brand-title-wrap">
-                    <span class="brand-cart-wrap cart-right select-none" aria-hidden="true">
-                        <i class="fa-solid fa-cart-shopping brand-cart-icon text-emerald-600"></i>
-                    </span>
-                    <span class="brand-title-text text-3xl sm:text-4xl">عربة الخضار</span>
-                    <span class="brand-cart-wrap cart-left select-none" aria-hidden="true">
-                        <i class="fa-solid fa-cart-shopping brand-cart-icon text-amber-500"></i>
-                    </span>
-                </h1>
+                <!-- 2. Titles with Dazzling Animation & Shopping Cart Icon (Next to Logo) -->
+                <div>
+                    <h1 class="brand-title-wrap">
+                        <span class="brand-title-text text-2xl sm:text-3xl md:text-4xl">عربة الخضار</span>
+                        <span class="brand-cart-wrap cart-left select-none" aria-hidden="true">
+                            <i class="fa-solid fa-cart-shopping brand-cart-icon text-amber-500"></i>
+                        </span>
+                    </h1>
+                </div>
             </div>
 
             <!-- Category Pills Tags with Animation & RGB Glow -->
@@ -533,6 +614,52 @@
                 </p>
             </div>
         </header>
+
+        <!-- Compact News Ticker / Marquee with RGB Border -->
+        <section class="news-ticker-container rgb-border rgb-delay-2 mb-3.5 sm:mb-4 shadow-xs" aria-label="شريط الأخبار والعروض">
+            <!-- Ticker Label Badge -->
+            <div class="ticker-badge ml-2 select-none">
+                <i class="fa-solid fa-bullhorn text-[9px] animate-pulse text-amber-200"></i>
+                <span class="font-tajawal">جديدنا</span>
+            </div>
+
+            <!-- Scrolling Content Track -->
+            <div class="news-ticker-track" dir="ltr">
+                <div class="ticker-content">
+                    <!-- Set 1 -->
+                    <span class="ticker-item" dir="rtl">🥦 خضار طازجة يومياً مباشرة من المزارع لباب بيتك</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🍎 تشكيلة فواكه موسمية ممتازة ومختارة بعناية فائقة</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🥩 ذبائح ولحوم طازجة يومياً تحت أعلى معايير الجودة</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🍹 عصائر طبيعية 100% فريش بدون أي إضافات</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">📍 9 فروع في خدمتكم بمدينة الرياض ومحافظة الخرج</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🌟 عروض وتخفيضات حصرية متجددة على سناب شات وتيك توك</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🚚 توصيل سريع يضمن وصول طلبكم بأعلى طزاجة</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+
+                    <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+                    <span class="ticker-item" dir="rtl">🥦 خضار طازجة يومياً مباشرة من المزارع لباب بيتك</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🍎 تشكيلة فواكه موسمية ممتازة ومختارة بعناية فائقة</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🥩 ذبائح ولحوم طازجة يومياً تحت أعلى معايير الجودة</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🍹 عصائر طبيعية 100% فريش بدون أي إضافات</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">📍 9 فروع في خدمتكم بمدينة الرياض ومحافظة الخرج</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🌟 عروض وتخفيضات حصرية متجددة على سناب شات وتيك توك</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                    <span class="ticker-item" dir="rtl">🚚 توصيل سريع يضمن وصول طلبكم بأعلى طزاجة</span>
+                    <span class="ticker-star" aria-hidden="true">✦</span>
+                </div>
+            </div>
+        </section>
 
         <!-- Action Links Section -->
         <section class="space-y-3 mb-6 sm:mb-8" aria-label="أزرار التواصل والعروض">
@@ -684,7 +811,7 @@
         </section>
 
         <!-- Features / Highlights Grid (Categories & Services) with RGB Glow -->
-        <section class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center mb-5 sm:mb-6" aria-label="أقسام ومميزات عربة الخضار">
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center mb-3 sm:mb-3.5" aria-label="أقسام ومميزات عربة الخضار">
             <div class="glass-card rgb-border rgb-delay-1 p-2.5 sm:p-3 rounded-2xl transition-all duration-300 hover:scale-105">
                 <div class="w-8 h-8 sm:w-9 sm:h-9 mx-auto mb-1.5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs sm:text-sm shadow-sm icon-box-glow icon-delay-1">
                     <i class="fa-solid fa-carrot icon-glow-pulse icon-delay-1"></i>
@@ -718,12 +845,30 @@
             </div>
         </section>
 
+        <!-- Store Info & Working Hours Strip (ساعات العمل وثقة العملاء) -->
+        <div class="glass-card rgb-border rgb-delay-1 rounded-2xl p-2 sm:p-2.5 text-center mb-2 flex items-center justify-around text-[10px] sm:text-[11px] font-bold text-slate-700">
+            <span class="flex items-center gap-1.5 text-emerald-700">
+                <i class="fa-solid fa-clock icon-glow-pulse text-xs"></i>
+                <span>يومياً 6 ص - 12 ليلاً</span>
+            </span>
+            <span class="text-slate-300">•</span>
+            <span class="flex items-center gap-1.5 text-amber-700">
+                <i class="fa-solid fa-shield-heart icon-glow-pulse text-xs"></i>
+                <span>طزاجة وجودة مضمونة</span>
+            </span>
+            <span class="text-slate-300">•</span>
+            <span class="flex items-center gap-1.5 text-blue-700">
+                <i class="fa-solid fa-headset icon-glow-pulse text-xs"></i>
+                <span>خدمة عملاء مستمرة</span>
+            </span>
+        </div>
+
     </main>
 
     <!-- Footer -->
-    <footer class="text-center py-4 px-3 text-[11px] sm:text-xs text-slate-500">
+    <footer class="w-full max-w-md mx-auto text-center py-2 px-3 text-[11px] sm:text-xs text-slate-500">
         <p class="flex items-center justify-center gap-1.5 flex-wrap">
-            <span>تصميم وتطوير:</span>
+            <span>تصميم و تطوير:</span>
             <a href="https://mamdouhmmo.github.io/MMO/" target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1">
                 <i class="fa-solid fa-code text-[11px]"></i>
                 <span>ممدوح عبد الهادي</span>
