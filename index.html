@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
@@ -7,15 +8,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>عربة الخضار | خضار وفواكه ولحوم طازجة وعصائر طبيعية</title>
-    
+
     <!-- Google Fonts: Cairo & Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@500;700;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -56,11 +59,12 @@
             -webkit-text-size-adjust: 100%;
             scroll-behavior: smooth;
         }
+
         body {
             font-family: 'Cairo', sans-serif;
             background: radial-gradient(circle at 10% 20%, rgba(22, 163, 74, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
-                        linear-gradient(135deg, #f0fdf4 0%, #fffbeb 50%, #f0fdf4 100%);
+                radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+                linear-gradient(135deg, #f0fdf4 0%, #fffbeb 50%, #f0fdf4 100%);
             min-height: 100vh;
             min-height: 100dvh;
             overflow-x: hidden;
@@ -83,6 +87,7 @@
             overflow: hidden;
             touch-action: manipulation;
         }
+
         .btn-shine::after {
             content: '';
             position: absolute;
@@ -90,15 +95,14 @@
             left: -60%;
             width: 20%;
             height: 200%;
-            background: linear-gradient(
-                to right, 
-                rgba(255, 255, 255, 0) 0%, 
-                rgba(255, 255, 255, 0.4) 50%, 
-                rgba(255, 255, 255, 0) 100%
-            );
+            background: linear-gradient(to right,
+                    rgba(255, 255, 255, 0) 0%,
+                    rgba(255, 255, 255, 0.4) 50%,
+                    rgba(255, 255, 255, 0) 100%);
             transform: rotate(30deg);
             transition: all 0.75s ease;
         }
+
         .btn-shine:hover::after {
             left: 140%;
         }
@@ -107,9 +111,11 @@
         ::-webkit-scrollbar {
             width: 6px;
         }
+
         ::-webkit-scrollbar-track {
             background: #f1f5f9;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #10b981;
             border-radius: 999px;
@@ -126,14 +132,27 @@
             cursor: pointer;
             will-change: transform;
         }
-        .pill-badge:nth-child(1) { animation-delay: 0s; }
-        .pill-badge:nth-child(2) { animation-delay: 0.4s; }
-        .pill-badge:nth-child(3) { animation-delay: 0.8s; }
-        .pill-badge:nth-child(4) { animation-delay: 1.2s; }
+
+        .pill-badge:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .pill-badge:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .pill-badge:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+
+        .pill-badge:nth-child(4) {
+            animation-delay: 1.2s;
+        }
 
         .pill-badge:hover {
             transform: translateY(-4px) scale(1.08) !important;
         }
+
         .pill-badge:active {
             transform: scale(0.95) !important;
         }
@@ -144,46 +163,80 @@
             animation: emojiTilt 2.4s ease-in-out infinite;
             transform-origin: center center;
         }
-        .pill-badge:nth-child(1) .pill-emoji { animation-delay: 0.1s; }
-        .pill-badge:nth-child(2) .pill-emoji { animation-delay: 0.5s; }
-        .pill-badge:nth-child(3) .pill-emoji { animation-delay: 0.9s; }
-        .pill-badge:nth-child(4) .pill-emoji { animation-delay: 1.3s; }
+
+        .pill-badge:nth-child(1) .pill-emoji {
+            animation-delay: 0.1s;
+        }
+
+        .pill-badge:nth-child(2) .pill-emoji {
+            animation-delay: 0.5s;
+        }
+
+        .pill-badge:nth-child(3) .pill-emoji {
+            animation-delay: 0.9s;
+        }
+
+        .pill-badge:nth-child(4) .pill-emoji {
+            animation-delay: 1.3s;
+        }
 
         .pill-badge:hover .pill-emoji {
             transform: scale(1.25) rotate(12deg);
         }
 
         @keyframes pillWave {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-3.5px);
             }
         }
 
         @keyframes emojiTilt {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: rotate(0deg) scale(1);
             }
+
             50% {
                 transform: rotate(8deg) scale(1.12);
             }
         }
 
         /* ==========================================================
-           Animated RGB Glowing Borders (حواف إضاءة RGB نيون متحركة)
+           Master Site Container RGB Glowing Frame (إطار الموقع نفسه المضيء)
            ========================================================== */
-        
-        /* 1. Screen Outer Edge Frame (إطار حواف الشاشة بالكامل) */
-        .rgb-screen-border {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 99999;
-            border-width: 3px;
-            border-style: solid;
-            animation: rgbBorderFlow 5s linear infinite;
+        .site-rgb-frame {
+            border-width: 3px !important;
+            border-style: solid !important;
+            border-radius: 1.75rem;
+            animation: rgbBorderFlow 4.5s linear infinite, siteFrameAura 3.5s ease-in-out infinite;
+            will-change: border-color, box-shadow;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .site-rgb-frame {
+                border-radius: 2.25rem;
+                border-width: 3.5px !important;
+            }
+        }
+
+        @keyframes siteFrameAura {
+            0%, 100% {
+                box-shadow: 0 0 16px rgba(16, 185, 129, 0.45), 0 0 35px rgba(0, 217, 255, 0.25), 0 15px 35px rgba(0, 0, 0, 0.07);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(255, 0, 85, 0.6), 0 0 50px rgba(255, 119, 0, 0.4), 0 0 75px rgba(0, 255, 102, 0.25), 0 20px 45px rgba(0, 0, 0, 0.1);
+            }
         }
 
         /* 2. RGB Object Edges (حواف كل الكائنات والأزرار والبطاقات والشعار) */
@@ -195,36 +248,53 @@
         }
 
         /* Staggered timings for a vibrant, wave-like lighting atmosphere */
-        .rgb-delay-1 { animation-delay: -0.8s; }
-        .rgb-delay-2 { animation-delay: -1.6s; }
-        .rgb-delay-3 { animation-delay: -2.4s; }
-        .rgb-delay-4 { animation-delay: -3.2s; }
+        .rgb-delay-1 {
+            animation-delay: -0.8s;
+        }
+
+        .rgb-delay-2 {
+            animation-delay: -1.6s;
+        }
+
+        .rgb-delay-3 {
+            animation-delay: -2.4s;
+        }
+
+        .rgb-delay-4 {
+            animation-delay: -3.2s;
+        }
 
         @keyframes rgbBorderFlow {
             0% {
                 border-color: #ff0055 !important;
                 box-shadow: 0 0 10px rgba(255, 0, 85, 0.5), 0 0 18px rgba(255, 0, 85, 0.2);
             }
+
             16.6% {
                 border-color: #ff7700 !important;
                 box-shadow: 0 0 10px rgba(255, 119, 0, 0.5), 0 0 18px rgba(255, 119, 0, 0.2);
             }
+
             33.3% {
                 border-color: #ffea00 !important;
                 box-shadow: 0 0 10px rgba(255, 234, 0, 0.5), 0 0 18px rgba(255, 234, 0, 0.2);
             }
+
             50% {
                 border-color: #00ff66 !important;
                 box-shadow: 0 0 10px rgba(0, 255, 102, 0.5), 0 0 18px rgba(0, 255, 102, 0.2);
             }
+
             66.6% {
                 border-color: #00d9ff !important;
                 box-shadow: 0 0 10px rgba(0, 217, 255, 0.5), 0 0 18px rgba(0, 217, 255, 0.2);
             }
+
             83.3% {
                 border-color: #b000ff !important;
                 box-shadow: 0 0 10px rgba(176, 0, 255, 0.5), 0 0 18px rgba(176, 0, 255, 0.2);
             }
+
             100% {
                 border-color: #ff0055 !important;
                 box-shadow: 0 0 10px rgba(255, 0, 85, 0.5), 0 0 18px rgba(255, 0, 85, 0.2);
@@ -246,16 +316,30 @@
         }
 
         /* Staggered animation delays for the icons */
-        .icon-delay-1 { animation-delay: 0s; }
-        .icon-delay-2 { animation-delay: 0.5s; }
-        .icon-delay-3 { animation-delay: 1s; }
-        .icon-delay-4 { animation-delay: 1.5s; }
+        .icon-delay-1 {
+            animation-delay: 0s;
+        }
+
+        .icon-delay-2 {
+            animation-delay: 0.5s;
+        }
+
+        .icon-delay-3 {
+            animation-delay: 1s;
+        }
+
+        .icon-delay-4 {
+            animation-delay: 1.5s;
+        }
 
         @keyframes iconPulseAnim {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4));
             }
+
             50% {
                 transform: scale(1.18);
                 filter: drop-shadow(0 0 7px currentColor) drop-shadow(0 0 14px currentColor);
@@ -263,10 +347,13 @@
         }
 
         @keyframes iconBoxGlowAnim {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
             }
+
             50% {
                 transform: scale(1.08);
                 box-shadow: 0 0 16px currentColor, 0 0 26px currentColor;
@@ -277,10 +364,14 @@
         .arrow-pulse {
             animation: arrowNudge 1.6s ease-in-out infinite;
         }
+
         @keyframes arrowNudge {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateX(0);
             }
+
             50% {
                 transform: translateX(-4px);
             }
@@ -371,28 +462,36 @@
             0% {
                 background-position: 0% 50%;
             }
+
             50% {
                 background-position: 100% 50%;
             }
+
             100% {
                 background-position: 0% 50%;
             }
         }
 
         @keyframes brandFloat {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) scale(1);
             }
+
             50% {
                 transform: translateY(-4px) scale(1.03);
             }
         }
 
         @keyframes brandAuraPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 filter: blur(6px) opacity(0.5);
                 transform: scale(0.98);
             }
+
             50% {
                 filter: blur(14px) opacity(0.95) drop-shadow(0 0 12px rgba(16, 185, 129, 0.85));
                 transform: scale(1.06);
@@ -400,15 +499,20 @@
         }
 
         @keyframes cartBounceMove {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0) scale(1) rotate(0deg);
             }
+
             25% {
                 transform: translateY(-3px) scale(1.1) rotate(-8deg);
             }
+
             50% {
                 transform: translateY(0) scale(1.03) rotate(0deg);
             }
+
             75% {
                 transform: translateY(-2px) scale(1.1) rotate(8deg);
             }
@@ -437,10 +541,13 @@
         }
 
         @keyframes branchPulseGlow {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: scale(1);
                 filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.2));
             }
+
             50% {
                 transform: scale(1.04);
                 filter: drop-shadow(0 0 9px rgba(16, 185, 129, 0.85)) drop-shadow(0 0 16px rgba(52, 211, 153, 0.55));
@@ -533,52 +640,56 @@
             0% {
                 transform: translateX(0);
             }
+
             100% {
                 transform: translateX(-50%);
             }
         }
     </style>
 </head>
-<body class="text-slate-800 antialiased relative selection:bg-emerald-500 selection:text-white flex flex-col items-center">
 
-    <!-- Ambient Animated RGB Screen Edge Frame (إطار إضاءة RGB نيون حول حواف الشاشة) -->
-    <div class="rgb-screen-border"></div>
+<body
+    class="text-slate-800 antialiased relative selection:bg-emerald-500 selection:text-white flex flex-col items-center justify-center min-h-screen py-2 sm:py-5 px-2 sm:px-4">
 
-    <!-- Main Container -->
-    <main class="w-full max-w-md mx-auto px-3.5 sm:px-4 pt-4 sm:pt-6 pb-2">
+    <!-- Master Site Container with Animated RGB Glow Frame (إطار الموقع نفسه المضيء) -->
+    <div class="site-rgb-frame w-full max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto p-3.5 sm:p-6 lg:p-8 transition-all duration-300">
+        <!-- Main Container -->
+        <main class="w-full">
 
         <!-- Header / Hero Section -->
-        <header class="text-center mb-5">
+        <header class="text-center mb-4 sm:mb-5 md:mb-6">
             <!-- Header Brand Row: Logo on Right, Name Next to it -->
-            <div class="flex items-center justify-center gap-2.5 sm:gap-3.5 mb-2.5 sm:mb-3">
+            <div class="flex items-center justify-center gap-2.5 sm:gap-4 md:gap-5 mb-2.5 sm:mb-3.5">
                 <!-- 1. Animated Logo Container with RGB Glow (Right) -->
                 <div class="relative flex-shrink-0">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl rgb-border p-0.5 sm:p-1 shadow-lg transition-transform hover:scale-105 duration-300">
-                        <div class="w-full h-full bg-white rounded-[13px] sm:rounded-[15px] flex flex-col items-center justify-center p-1 overflow-hidden border border-emerald-100 relative">
-                            <img id="mainLogo" 
-                                 src="https://i.postimg.cc/MKpJgVwq/ar.jpg" 
-                                 alt="شعار عربة الخضار" 
-                                 class="w-full h-full object-contain rounded-[11px] sm:rounded-[13px] transition-all duration-300"
-                                 onerror="handleLogoError(this)"
-                                 onload="handleLogoSuccess(this)">
-                            
+                    <div
+                        class="w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24 rounded-2xl md:rounded-3xl rgb-border p-0.5 sm:p-1 shadow-lg transition-transform hover:scale-105 duration-300">
+                        <div
+                            class="w-full h-full bg-white rounded-[13px] sm:rounded-[15px] md:rounded-[20px] flex flex-col items-center justify-center p-1 overflow-hidden border border-emerald-100 relative">
+                            <img id="mainLogo" src="https://i.postimg.cc/MKpJgVwq/ar.jpg" alt="شعار عربة الخضار"
+                                class="w-full h-full object-contain rounded-[11px] sm:rounded-[13px] md:rounded-[18px] transition-all duration-300"
+                                onerror="handleLogoError(this)" onload="handleLogoSuccess(this)">
+
                             <!-- بديل أيقونة في حال تعذر تحميل رابط الصورة -->
-                            <div id="logoFallback" class="hidden w-full h-full flex-col items-center justify-center p-1 text-center">
-                                <i class="fa-solid fa-cart-shopping text-emerald-600 text-xl mb-0.5 drop-shadow"></i>
-                                <span class="text-[9px] font-black text-amber-600 tracking-wider font-tajawal">طازج</span>
+                            <div id="logoFallback"
+                                class="hidden w-full h-full flex-col items-center justify-center p-1 text-center">
+                                <i class="fa-solid fa-cart-shopping text-emerald-600 text-xl md:text-2xl mb-0.5 drop-shadow"></i>
+                                <span
+                                    class="text-[9px] md:text-xs font-black text-amber-600 tracking-wider font-tajawal">طازج</span>
                             </div>
                         </div>
                     </div>
                     <!-- Mini Badge -->
-                    <span class="absolute -bottom-1 -left-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md border-2 border-white flex items-center gap-0.5">
-                        <i class="fa-solid fa-leaf text-lime-200 text-[8px]"></i> 100%
+                    <span
+                        class="absolute -bottom-1 -left-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[9px] sm:text-[10px] md:text-xs font-bold px-2 md:px-2.5 py-0.5 rounded-full shadow-md border-2 border-white flex items-center gap-0.5">
+                        <i class="fa-solid fa-leaf text-lime-200 text-[8px] md:text-[10px]"></i> 100%
                     </span>
                 </div>
 
                 <!-- 2. Titles with Dazzling Animation & Shopping Cart Icon (Next to Logo) -->
                 <div>
                     <h1 class="brand-title-wrap">
-                        <span class="brand-title-text text-2xl sm:text-3xl md:text-4xl">عربة الخضار</span>
+                        <span class="brand-title-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl">عربة الخضار</span>
                         <span class="brand-cart-wrap cart-left select-none" aria-hidden="true">
                             <i class="fa-solid fa-cart-shopping brand-cart-icon text-amber-500"></i>
                         </span>
@@ -587,296 +698,352 @@
             </div>
 
             <!-- Category Pills Tags with Animation & RGB Glow -->
-            <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-2.5">
-                <span class="pill-badge rgb-border rgb-delay-1 bg-emerald-100/90 text-emerald-800 text-[11px] sm:text-xs font-bold px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm">
+            <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 md:gap-3 mb-2.5 sm:mb-3">
+                <span
+                    class="pill-badge rgb-border rgb-delay-1 bg-emerald-100/90 text-emerald-800 text-[11px] sm:text-xs md:text-sm font-bold px-2.5 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full shadow-sm">
                     <span class="pill-emoji">🥦🍎</span>
                     <span>خضار وفواكه</span>
                 </span>
-                <span class="pill-badge rgb-border rgb-delay-2 bg-rose-100/90 text-rose-800 text-[11px] sm:text-xs font-bold px-2.5 py-0.5 sm:py-1 rounded-full border border-rose-200/80 shadow-sm">
+                <span
+                    class="pill-badge rgb-border rgb-delay-2 bg-rose-100/90 text-rose-800 text-[11px] sm:text-xs md:text-sm font-bold px-2.5 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full border border-rose-200/80 shadow-sm">
                     <span class="pill-emoji">🥩</span>
                     <span>لحوم طازجة</span>
                 </span>
-                <span class="pill-badge rgb-border rgb-delay-3 bg-orange-100/90 text-orange-800 text-[11px] sm:text-xs font-bold px-2.5 py-0.5 sm:py-1 rounded-full shadow-sm">
+                <span
+                    class="pill-badge rgb-border rgb-delay-3 bg-orange-100/90 text-orange-800 text-[11px] sm:text-xs md:text-sm font-bold px-2.5 sm:px-3 md:px-4 py-0.5 sm:py-1 md:py-1.5 rounded-full shadow-sm">
                     <span class="pill-emoji">🍹</span>
                     <span>عصائر طبيعية</span>
                 </span>
             </div>
 
-            <p class="text-emerald-700 font-semibold text-xs sm:text-sm mb-3 sm:mb-4 flex items-center justify-center gap-1.5 px-2">
-                <i class="fa-solid fa-truck-fast animate-bounce text-sm"></i>
+            <p
+                class="text-emerald-700 font-semibold text-xs sm:text-sm md:text-base mb-3 sm:mb-4 flex items-center justify-center gap-1.5 px-2">
+                <i class="fa-solid fa-truck-fast animate-bounce text-sm md:text-base"></i>
                 <span>خضار وفواكه ولحوم وعصائر طازجة إلى باب بيتك</span>
             </p>
 
             <!-- Notice / Welcome Banner with RGB Border -->
-            <div class="glass-card rgb-border rounded-2xl p-3 sm:p-3.5 text-center relative overflow-hidden">
-                <p class="text-[11px] sm:text-xs font-bold text-slate-700 leading-relaxed">
-                    🌟 نرحب بك في <span class="text-emerald-700 font-black">عربة الخضار التجارية</span> ونسعد بخدمتك من خلال شبكة فروعنا المنتشرة بمدينة الرياض والخرج
+            <div class="glass-card rgb-border rounded-2xl p-3 sm:p-3.5 md:p-4 text-center relative overflow-hidden">
+                <p class="text-[11px] sm:text-xs md:text-sm lg:text-base font-bold text-slate-700 leading-relaxed">
+                    🌟 نرحب بك في <span class="text-emerald-700 font-black">عربة الخضار التجارية</span> ونسعد بخدمتك من
+                    خلال شبكة فروعنا المنتشرة بمدينة الرياض والخرج
                 </p>
             </div>
         </header>
 
         <!-- Compact News Ticker / Marquee with RGB Border -->
-        <section class="news-ticker-container rgb-border rgb-delay-2 mb-3.5 sm:mb-4 shadow-xs" aria-label="شريط الأخبار والعروض">
+        <section class="news-ticker-container rgb-border rgb-delay-2 mb-3.5 sm:mb-4 md:mb-5 shadow-xs"
+            aria-label="شريط الأخبار والعروض">
             <!-- Ticker Label Badge -->
             <div class="ticker-badge ml-2 select-none">
-                <i class="fa-solid fa-bullhorn text-[9px] animate-pulse text-amber-200"></i>
-                <span class="font-tajawal">جديدنا</span>
+                <i class="fa-solid fa-bullhorn text-[9px] md:text-xs animate-pulse text-amber-200"></i>
+                <span class="font-tajawal text-xs md:text-sm">جديدنا</span>
             </div>
 
             <!-- Scrolling Content Track -->
             <div class="news-ticker-track" dir="ltr">
                 <div class="ticker-content">
                     <!-- Set 1 -->
-                    <span class="ticker-item" dir="rtl">🥦 خضار طازجة يومياً مباشرة من المزارع لباب بيتك</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🥦 خضار طازجة يومياً مباشرة من المزارع لباب بيتك</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🍎 تشكيلة فواكه موسمية ممتازة ومختارة بعناية فائقة</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🍎 تشكيلة فواكه موسمية ممتازة ومختارة بعناية فائقة</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🥩 ذبائح ولحوم طازجة يومياً تحت أعلى معايير الجودة</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🥩 ذبائح ولحوم طازجة يومياً تحت أعلى معايير الجودة</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🍹 عصائر طبيعية 100% فريش بدون أي إضافات</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🍹 عصائر طبيعية 100% فريش بدون أي إضافات</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">📍 9 فروع في خدمتكم بمدينة الرياض ومحافظة الخرج</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">📍 9 فروع في خدمتكم بمدينة الرياض ومحافظة الخرج</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🌟 عروض وتخفيضات حصرية متجددة على سناب شات وتيك توك</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🌟 عروض وتخفيضات حصرية متجددة على سناب شات وتيك توك</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🚚 توصيل سريع يضمن وصول طلبكم بأعلى طزاجة</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🚚 توصيل سريع يضمن وصول طلبكم بأعلى طزاجة</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
 
                     <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
-                    <span class="ticker-item" dir="rtl">🥦 خضار طازجة يومياً مباشرة من المزارع لباب بيتك</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🥦 خضار طازجة يومياً مباشرة من المزارع لباب بيتك</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🍎 تشكيلة فواكه موسمية ممتازة ومختارة بعناية فائقة</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🍎 تشكيلة فواكه موسمية ممتازة ومختارة بعناية فائقة</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🥩 ذبائح ولحوم طازجة يومياً تحت أعلى معايير الجودة</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🥩 ذبائح ولحوم طازجة يومياً تحت أعلى معايير الجودة</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🍹 عصائر طبيعية 100% فريش بدون أي إضافات</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🍹 عصائر طبيعية 100% فريش بدون أي إضافات</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">📍 9 فروع في خدمتكم بمدينة الرياض ومحافظة الخرج</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">📍 9 فروع في خدمتكم بمدينة الرياض ومحافظة الخرج</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🌟 عروض وتخفيضات حصرية متجددة على سناب شات وتيك توك</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🌟 عروض وتخفيضات حصرية متجددة على سناب شات وتيك توك</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
-                    <span class="ticker-item" dir="rtl">🚚 توصيل سريع يضمن وصول طلبكم بأعلى طزاجة</span>
+                    <span class="ticker-item md:text-sm" dir="rtl">🚚 توصيل سريع يضمن وصول طلبكم بأعلى طزاجة</span>
                     <span class="ticker-star" aria-hidden="true">✦</span>
                 </div>
             </div>
         </section>
 
-        <!-- Action Links Section -->
-        <section class="space-y-3 mb-6 sm:mb-8" aria-label="أزرار التواصل والعروض">
-            
+        <!-- Action Links Section (عمود واحد للهاتف وعمودين للآيباد والكمبيوتر) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-3.5 md:gap-4 mb-4 sm:mb-5 md:mb-6" aria-label="أزرار التواصل والعروض">
+
             <!-- 1. Snapchat Button -->
-            <a id="snapchatBtn" href="https://www.snapchat.com/add/rblkhdr1?share_id=llgZfSJvRRmAD5tGDtB_eA&locale=en_SA@calendar=gregorian" target="_blank" rel="noopener noreferrer"
-               class="btn-shine rgb-border rgb-delay-1 group w-full bg-gradient-to-r from-[#FFFC00] to-[#f5ee00] text-slate-900 rounded-2xl p-3 sm:p-3.5 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200">
+            <a id="snapchatBtn"
+                href="https://www.snapchat.com/add/rblkhdr1?share_id=llgZfSJvRRmAD5tGDtB_eA&locale=en_SA@calendar=gregorian"
+                target="_blank" rel="noopener noreferrer"
+                class="btn-shine rgb-border rgb-delay-1 group w-full bg-gradient-to-r from-[#FFFC00] to-[#f5ee00] text-slate-900 rounded-2xl p-3 sm:p-3.5 md:p-4 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200">
                 <div class="flex items-center gap-3 min-w-0 flex-1">
-                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/95 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition-transform flex-shrink-0 icon-box-glow icon-delay-1 text-yellow-400">
+                    <div
+                        class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-white/95 flex items-center justify-center text-2xl md:text-3xl shadow-inner group-hover:scale-110 transition-transform flex-shrink-0 icon-box-glow icon-delay-1 text-yellow-400">
                         <i class="fa-brands fa-snapchat text-slate-900 icon-glow-pulse icon-delay-1"></i>
                     </div>
                     <div class="text-right min-w-0 flex-1">
-                        <span class="block text-base sm:text-lg font-black font-tajawal">تابع عروضنا علي سناب</span>
+                        <span class="block text-base sm:text-lg md:text-xl font-black font-tajawal">تابع عروضنا علي سناب</span>
                     </div>
                 </div>
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-900/10 flex items-center justify-center arrow-pulse flex-shrink-0 mr-2">
-                    <i class="fa-solid fa-arrow-left text-slate-900 text-xs sm:text-sm"></i>
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-slate-900/10 flex items-center justify-center arrow-pulse flex-shrink-0 mr-2">
+                    <i class="fa-solid fa-arrow-left text-slate-900 text-xs sm:text-sm md:text-base"></i>
                 </div>
             </a>
 
             <!-- 2. TikTok Button -->
-            <a id="tiktokBtn" href="https://www.tiktok.com/@vege.table.cart?_r=1&_t=ZS-99wdKiPLBjD" target="_blank" rel="noopener noreferrer"
-               class="btn-shine rgb-border rgb-delay-2 group w-full bg-gradient-to-r from-neutral-900 via-neutral-950 to-neutral-900 text-white rounded-2xl p-3 sm:p-3.5 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200 relative overflow-hidden">
+            <a id="tiktokBtn" href="https://www.tiktok.com/@vege.table.cart?_r=1&_t=ZS-99wdKiPLBjD" target="_blank"
+                rel="noopener noreferrer"
+                class="btn-shine rgb-border rgb-delay-2 group w-full bg-gradient-to-r from-neutral-900 via-neutral-950 to-neutral-900 text-white rounded-2xl p-3 sm:p-3.5 md:p-4 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200 relative overflow-hidden">
                 <div class="flex items-center gap-3 min-w-0 flex-1 relative z-10">
-                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-[#00f2fe] to-[#fe0979] p-[2px] shadow group-hover:rotate-6 transition-transform flex-shrink-0 icon-box-glow icon-delay-2 text-[#00f2fe]">
-                        <div class="w-full h-full bg-neutral-900 rounded-[10px] flex items-center justify-center text-lg sm:text-xl text-white">
+                    <div
+                        class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-tr from-[#00f2fe] to-[#fe0979] p-[2px] shadow group-hover:rotate-6 transition-transform flex-shrink-0 icon-box-glow icon-delay-2 text-[#00f2fe]">
+                        <div
+                            class="w-full h-full bg-neutral-900 rounded-[10px] flex items-center justify-center text-lg sm:text-xl md:text-2xl text-white">
                             <i class="fa-brands fa-tiktok icon-glow-pulse icon-delay-2"></i>
                         </div>
                     </div>
                     <div class="text-right min-w-0 flex-1">
-                        <span class="block text-base sm:text-lg font-black font-tajawal">تابع عروضنا علي تيك توك</span>
+                        <span class="block text-base sm:text-lg md:text-xl font-black font-tajawal">تابع عروضنا علي تيك توك</span>
                     </div>
                 </div>
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center arrow-pulse relative z-10 flex-shrink-0 mr-2">
-                    <i class="fa-solid fa-arrow-left text-white text-xs sm:text-sm"></i>
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white/10 flex items-center justify-center arrow-pulse relative z-10 flex-shrink-0 mr-2">
+                    <i class="fa-solid fa-arrow-left text-white text-xs sm:text-sm md:text-base"></i>
                 </div>
             </a>
 
             <!-- 3. WhatsApp Button -->
-            <a id="whatsappBtn" href="https://wa.me/966115007271?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D8%B1%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B6%D8%A7%D8%B1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%20%D8%B9%D9%84%D9%89%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D8%AE%D8%B6%D8%A7%D8%B1%20%D9%88%D8%A7%D9%84%D9%81%D9%88%D8%A7%D9%83%D9%87%20%D9%88%D8%A7%D9%84%D9%84%D8%AD%D9%88%D9%85%20%D9%88%D8%A7%D9%84%D8%B9%D8%B5%D8%A7%D8%A6%D8%B1%20%D9%88%D8%A7%D9%84%D8%B7%D9%84%D8%A8" target="_blank" rel="noopener noreferrer"
-               class="btn-shine rgb-border rgb-delay-3 group w-full bg-gradient-to-r from-emerald-600 to-green-500 text-white rounded-2xl p-3 sm:p-3.5 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200">
+            <a id="whatsappBtn"
+                href="https://wa.me/966115007271?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%B9%D8%B1%D8%A8%D8%A9%20%D8%A7%D9%84%D8%AE%D8%B6%D8%A7%D8%B1%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%20%D8%B9%D9%84%D9%89%20%D8%B9%D8%B1%D9%88%D8%B6%20%D8%A7%D9%84%D8%AE%D8%B6%D8%A7%D8%B1%20%D9%88%D8%A7%D9%84%D9%81%D9%88%D8%A7%D9%83%D9%87%20%D9%88%D8%A7%D9%84%D9%84%D8%AD%D9%88%D9%85%20%D9%88%D8%A7%D9%84%D8%B9%D8%B5%D8%A7%D8%A6%D8%B1%20%D9%88%D8%A7%D9%84%D8%B7%D9%84%D8%A8"
+                target="_blank" rel="noopener noreferrer"
+                class="btn-shine rgb-border rgb-delay-3 group w-full bg-gradient-to-r from-emerald-600 to-green-500 text-white rounded-2xl p-3 sm:p-3.5 md:p-4 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200">
                 <div class="flex items-center gap-3 min-w-0 flex-1">
-                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center text-xl sm:text-2xl shadow-inner group-hover:scale-110 transition-transform flex-shrink-0 icon-box-glow icon-delay-3 text-emerald-300">
+                    <div
+                        class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center text-xl sm:text-2xl md:text-3xl shadow-inner group-hover:scale-110 transition-transform flex-shrink-0 icon-box-glow icon-delay-3 text-emerald-300">
                         <i class="fa-brands fa-whatsapp text-white icon-glow-pulse icon-delay-3"></i>
                     </div>
                     <div class="text-right min-w-0 flex-1">
-                        <span class="block text-sm sm:text-base font-black font-tajawal leading-snug">اطلب عبر واتساب مباشرة</span>
-                        <span class="block text-[11px] sm:text-xs font-medium text-emerald-100 leading-tight truncate">حجز طلبات الخضار والفواكه واللحوم والعصائر</span>
+                        <span class="block text-sm sm:text-base md:text-lg font-black font-tajawal leading-snug">اطلب عبر واتساب
+                            مباشرة</span>
+                        <span
+                            class="block text-[11px] sm:text-xs md:text-sm font-medium text-emerald-100 leading-tight truncate">حجز
+                            طلبات الخضار والفواكه واللحوم والعصائر</span>
                     </div>
                 </div>
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/20 flex items-center justify-center arrow-pulse flex-shrink-0 mr-2">
-                    <i class="fa-solid fa-arrow-left text-white text-xs sm:text-sm"></i>
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center arrow-pulse flex-shrink-0 mr-2">
+                    <i class="fa-solid fa-arrow-left text-white text-xs sm:text-sm md:text-base"></i>
                 </div>
             </a>
 
             <!-- 4. Direct Call Button -->
             <a id="phoneBtn" href="tel:+966115007271"
-               class="btn-shine rgb-border rgb-delay-4 group w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-2xl p-3 sm:p-3.5 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200">
+                class="btn-shine rgb-border rgb-delay-4 group w-full bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-2xl p-3 sm:p-3.5 md:p-4 flex items-center justify-between transform active:scale-[0.98] transition-all duration-200">
                 <div class="flex items-center gap-3 min-w-0 flex-1">
-                    <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center text-lg sm:text-xl shadow-inner group-hover:scale-110 transition-transform flex-shrink-0 icon-box-glow icon-delay-4 text-orange-200">
+                    <div
+                        class="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-white/20 backdrop-blur flex items-center justify-center text-lg sm:text-xl md:text-2xl shadow-inner group-hover:scale-110 transition-transform flex-shrink-0 icon-box-glow icon-delay-4 text-orange-200">
                         <i class="fa-solid fa-phone-volume text-white icon-glow-pulse icon-delay-4"></i>
                     </div>
                     <div class="text-right min-w-0 flex-1">
-                        <span class="block text-sm sm:text-base font-black font-tajawal leading-snug">اتصال هاتفي مباشر</span>
-                        <span class="block text-[11px] sm:text-xs font-medium text-orange-100 leading-tight">0115007271 - نحن بانتظار اتصالك</span>
+                        <span class="block text-sm sm:text-base md:text-lg font-black font-tajawal leading-snug">اتصال هاتفي
+                            مباشر</span>
+                        <span class="block text-[11px] sm:text-xs md:text-sm font-medium text-orange-100 leading-tight">0115007271
+                            - نحن بانتظار اتصالك</span>
                     </div>
                 </div>
-                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/20 flex items-center justify-center arrow-pulse flex-shrink-0 mr-2">
-                    <i class="fa-solid fa-arrow-left text-white text-xs sm:text-sm"></i>
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-white/20 flex items-center justify-center arrow-pulse flex-shrink-0 mr-2">
+                    <i class="fa-solid fa-arrow-left text-white text-xs sm:text-sm md:text-base"></i>
                 </div>
             </a>
 
         </section>
 
         <!-- Branches Section (فروعنا - تصميم مدمج وخفيف لا يزيد طول الصفحة) -->
-        <section class="glass-card rgb-border rgb-delay-3 p-2.5 sm:p-3 rounded-2xl mb-4 sm:mb-5" aria-label="فروع عربة الخضار">
-            <div class="flex items-center justify-between mb-2 px-1">
-                <span class="text-xs sm:text-sm font-black text-slate-800 font-tajawal flex items-center gap-1.5">
+        <section class="glass-card rgb-border rgb-delay-3 p-2.5 sm:p-3 md:p-4 rounded-2xl mb-3.5 sm:mb-4 md:mb-5"
+            aria-label="فروع عربة الخضار">
+            <div class="flex items-center justify-between mb-2 md:mb-3 px-1">
+                <span class="text-xs sm:text-sm md:text-base font-black text-slate-800 font-tajawal flex items-center gap-1.5">
                     <i class="fa-solid fa-map-location-dot text-emerald-600"></i>
                     <span>فروعنا</span>
                 </span>
-                <span class="text-[10px] text-slate-400 font-medium">اضغط للموقع على الخريطة</span>
+                <span class="text-[10px] sm:text-xs md:text-sm text-slate-400 font-medium">اضغط للموقع على الخريطة</span>
             </div>
-            
-            <div class="grid grid-cols-3 gap-1.5">
+
+            <div class="grid grid-cols-3 gap-1.5 sm:gap-2 md:gap-3">
                 <!-- 1. النسيم الأول -->
-                <a href="https://maps.app.goo.gl/h5Vxs5L3W3j94Q1T8" target="_blank" rel="noopener noreferrer" title="فرع النسيم الأول"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/h5Vxs5L3W3j94Q1T8" target="_blank" rel="noopener noreferrer"
+                    title="فرع النسيم الأول"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">النسيم الأول</span>
                 </a>
 
                 <!-- 2. النسيم الثاني -->
-                <a href="https://maps.app.goo.gl/BPrNpXi7CUWqUMzK8" target="_blank" rel="noopener noreferrer" title="فرع النسيم الثاني"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/BPrNpXi7CUWqUMzK8" target="_blank" rel="noopener noreferrer"
+                    title="فرع النسيم الثاني"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">النسيم الثاني</span>
                 </a>
 
                 <!-- 3. الربوة -->
-                <a href="https://maps.app.goo.gl/gGrSh8coiC57gxYi7" target="_blank" rel="noopener noreferrer" title="فرع الربوة"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/gGrSh8coiC57gxYi7" target="_blank" rel="noopener noreferrer"
+                    title="فرع الربوة"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">الربوة</span>
                 </a>
 
                 <!-- 4. وادي لبن -->
-                <a href="https://maps.app.goo.gl/vdLPurTKntiJKvjB9" target="_blank" rel="noopener noreferrer" title="فرع وادي لبن"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/vdLPurTKntiJKvjB9" target="_blank" rel="noopener noreferrer"
+                    title="فرع وادي لبن"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">وادي لبن</span>
                 </a>
 
                 <!-- 5. طويق -->
-                <a href="https://maps.app.goo.gl/dzZ3ZxbjXm3HiRms6" target="_blank" rel="noopener noreferrer" title="فرع طويق"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/dzZ3ZxbjXm3HiRms6" target="_blank" rel="noopener noreferrer"
+                    title="فرع طويق"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">طويق</span>
                 </a>
 
                 <!-- 6. العوالي -->
-                <a href="https://maps.app.goo.gl/YFZdxQ3o37F4sn6h7" target="_blank" rel="noopener noreferrer" title="فرع العوالي"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/YFZdxQ3o37F4sn6h7" target="_blank" rel="noopener noreferrer"
+                    title="فرع العوالي"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">العوالي</span>
                 </a>
 
                 <!-- 7. الدار البيضاء -->
-                <a href="https://maps.app.goo.gl/QSN4bdjshnt2sQ9e6" target="_blank" rel="noopener noreferrer" title="فرع الدار البيضاء"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/QSN4bdjshnt2sQ9e6" target="_blank" rel="noopener noreferrer"
+                    title="فرع الدار البيضاء"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">الدار البيضاء</span>
                 </a>
 
                 <!-- 8. المنصورة -->
-                <a href="https://maps.app.goo.gl/aD3CgJ3FKUpPFiTe6" target="_blank" rel="noopener noreferrer" title="فرع المنصورة"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/aD3CgJ3FKUpPFiTe6" target="_blank" rel="noopener noreferrer"
+                    title="فرع المنصورة"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">المنصورة</span>
                 </a>
 
                 <!-- 9. الخرج -->
-                <a href="https://maps.app.goo.gl/pW4TM1aDRWmSVS4BA" target="_blank" rel="noopener noreferrer" title="فرع الخرج"
-                   class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 px-1 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-all duration-200 text-center">
-                    <i class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] flex-shrink-0"></i>
+                <a href="https://maps.app.goo.gl/pW4TM1aDRWmSVS4BA" target="_blank" rel="noopener noreferrer"
+                    title="فرع الخرج"
+                    class="branch-btn rgb-border group bg-white/95 text-slate-800 hover:bg-emerald-600 hover:text-white rounded-xl py-1.5 sm:py-2 md:py-2.5 px-1 sm:px-2 md:px-3 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold flex items-center justify-center gap-1 md:gap-1.5 transition-all duration-200 text-center">
+                    <i
+                        class="fa-solid fa-location-dot icon-glow-pulse text-emerald-600 group-hover:text-white text-[9px] sm:text-[10px] md:text-xs flex-shrink-0"></i>
                     <span class="truncate">الخرج</span>
                 </a>
             </div>
         </section>
 
         <!-- Features / Highlights Grid (Categories & Services) with RGB Glow -->
-        <section class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-center mb-3 sm:mb-3.5" aria-label="أقسام ومميزات عربة الخضار">
-            <div class="glass-card rgb-border rgb-delay-1 p-2.5 sm:p-3 rounded-2xl transition-all duration-300 hover:scale-105">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 mx-auto mb-1.5 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs sm:text-sm shadow-sm icon-box-glow icon-delay-1">
+        <section class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-2.5 sm:gap-3 md:gap-4 text-center mb-3 sm:mb-3.5 md:mb-4"
+            aria-label="أقسام ومميزات عربة الخضار">
+            <div
+                class="glass-card rgb-border rgb-delay-1 p-2.5 sm:p-3 md:p-4 rounded-2xl transition-all duration-300 hover:scale-105">
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-11 md:h-11 mx-auto mb-1.5 md:mb-2 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-xs sm:text-sm md:text-base shadow-sm icon-box-glow icon-delay-1">
                     <i class="fa-solid fa-carrot icon-glow-pulse icon-delay-1"></i>
                 </div>
-                <h4 class="text-[11px] sm:text-xs font-black text-slate-800 font-tajawal">خضار وفواكه</h4>
-                <p class="text-[9px] sm:text-[10px] text-slate-500 mt-0.5 font-medium">طازجة من المزارع يومياً</p>
+                <h4 class="text-[11px] sm:text-xs md:text-sm lg:text-base font-black text-slate-800 font-tajawal">خضار وفواكه</h4>
+                <p class="text-[9px] sm:text-[10px] md:text-xs text-slate-500 mt-0.5 font-medium">طازجة من المزارع يومياً</p>
             </div>
-            
-            <div class="glass-card rgb-border rgb-delay-2 p-2.5 sm:p-3 rounded-2xl transition-all duration-300 hover:scale-105">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 mx-auto mb-1.5 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs sm:text-sm shadow-sm icon-box-glow icon-delay-2">
+
+            <div
+                class="glass-card rgb-border rgb-delay-2 p-2.5 sm:p-3 md:p-4 rounded-2xl transition-all duration-300 hover:scale-105">
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-11 md:h-11 mx-auto mb-1.5 md:mb-2 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-xs sm:text-sm md:text-base shadow-sm icon-box-glow icon-delay-2">
                     <i class="fa-solid fa-drumstick-bite icon-glow-pulse icon-delay-2"></i>
                 </div>
-                <h4 class="text-[11px] sm:text-xs font-black text-slate-800 font-tajawal">لحوم طازجة</h4>
-                <p class="text-[9px] sm:text-[10px] text-slate-500 mt-0.5 font-medium">أجود الذبائح المختارة</p>
+                <h4 class="text-[11px] sm:text-xs md:text-sm lg:text-base font-black text-slate-800 font-tajawal">لحوم طازجة</h4>
+                <p class="text-[9px] sm:text-[10px] md:text-xs text-slate-500 mt-0.5 font-medium">أجود الذبائح المختارة</p>
             </div>
 
-            <div class="glass-card rgb-border rgb-delay-3 p-2.5 sm:p-3 rounded-2xl transition-all duration-300 hover:scale-105">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 mx-auto mb-1.5 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xs sm:text-sm shadow-sm icon-box-glow icon-delay-3">
+            <div
+                class="glass-card rgb-border rgb-delay-3 p-2.5 sm:p-3 md:p-4 rounded-2xl transition-all duration-300 hover:scale-105">
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-11 md:h-11 mx-auto mb-1.5 md:mb-2 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-xs sm:text-sm md:text-base shadow-sm icon-box-glow icon-delay-3">
                     <i class="fa-solid fa-wine-glass icon-glow-pulse icon-delay-3"></i>
                 </div>
-                <h4 class="text-[11px] sm:text-xs font-black text-slate-800 font-tajawal">عصائر طبيعية</h4>
-                <p class="text-[9px] sm:text-[10px] text-slate-500 mt-0.5 font-medium">فريش 100% بدون إضافات</p>
+                <h4 class="text-[11px] sm:text-xs md:text-sm lg:text-base font-black text-slate-800 font-tajawal">عصائر طبيعية</h4>
+                <p class="text-[9px] sm:text-[10px] md:text-xs text-slate-500 mt-0.5 font-medium">فريش 100% بدون إضافات</p>
             </div>
 
-            <div class="glass-card rgb-border rgb-delay-4 p-2.5 sm:p-3 rounded-2xl transition-all duration-300 hover:scale-105">
-                <div class="w-8 h-8 sm:w-9 sm:h-9 mx-auto mb-1.5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs sm:text-sm shadow-sm icon-box-glow icon-delay-4">
+            <div
+                class="glass-card rgb-border rgb-delay-4 p-2.5 sm:p-3 md:p-4 rounded-2xl transition-all duration-300 hover:scale-105">
+                <div
+                    class="w-8 h-8 sm:w-9 sm:h-9 md:w-11 md:h-11 mx-auto mb-1.5 md:mb-2 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs sm:text-sm md:text-base shadow-sm icon-box-glow icon-delay-4">
                     <i class="fa-solid fa-truck-fast icon-glow-pulse icon-delay-4"></i>
                 </div>
-                <h4 class="text-[11px] sm:text-xs font-black text-slate-800 font-tajawal">توصيل سريع</h4>
-                <p class="text-[9px] sm:text-[10px] text-slate-500 mt-0.5 font-medium">لباب بيتك بأعلى جودة</p>
+                <h4 class="text-[11px] sm:text-xs md:text-sm lg:text-base font-black text-slate-800 font-tajawal">توصيل سريع</h4>
+                <p class="text-[9px] sm:text-[10px] md:text-xs text-slate-500 mt-0.5 font-medium">لباب بيتك بأعلى جودة</p>
             </div>
         </section>
 
         <!-- Store Info & Working Hours Strip (ساعات العمل وثقة العملاء) -->
-        <div class="glass-card rgb-border rgb-delay-1 rounded-2xl p-2 sm:p-2.5 text-center mb-2 flex items-center justify-around text-[10px] sm:text-[11px] font-bold text-slate-700">
+        <div
+            class="glass-card rgb-border rgb-delay-1 rounded-2xl p-2 sm:p-2.5 md:p-3 text-center mb-2 md:mb-3 flex items-center justify-around flex-wrap sm:flex-nowrap gap-2 text-[10px] sm:text-[11px] md:text-xs lg:text-sm font-bold text-slate-700">
             <span class="flex items-center gap-1.5 text-emerald-700">
-                <i class="fa-solid fa-clock icon-glow-pulse text-xs"></i>
+                <i class="fa-solid fa-clock icon-glow-pulse text-xs md:text-sm"></i>
                 <span>يومياً 8 ص - 12 ليلاً</span>
             </span>
             <span class="text-slate-300">•</span>
             <span class="flex items-center gap-1.5 text-amber-700">
-                <i class="fa-solid fa-shield-heart icon-glow-pulse text-xs"></i>
+                <i class="fa-solid fa-shield-heart icon-glow-pulse text-xs md:text-sm"></i>
                 <span>طزاجة وجودة مضمونة</span>
             </span>
             <span class="text-slate-300">•</span>
             <span class="flex items-center gap-1.5 text-blue-700">
-                <i class="fa-solid fa-headset icon-glow-pulse text-xs"></i>
+                <i class="fa-solid fa-headset icon-glow-pulse text-xs md:text-sm"></i>
                 <span>خدمة عملاء مستمرة</span>
             </span>
         </div>
 
-    </main>
+        </main>
 
-    <!-- Footer -->
-    <footer class="w-full max-w-md mx-auto text-center py-2 px-3 text-[11px] sm:text-xs text-slate-500">
-        <p class="flex items-center justify-center gap-1.5 flex-wrap">
-            <span>تصميم و تطوير:</span>
-            <a href="https://mamdouhmmo.github.io/MMO/" target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1">
-                <i class="fa-solid fa-code text-[11px]"></i>
-                <span>ممدوح عبد الهادي</span>
-            </a>
-            <span class="text-slate-300">•</span>
-            <span>جميع الحقوق محفوظة © <span id="currentYear"></span></span>
-        </p>
-    </footer>
+        <!-- Footer -->
+        <footer class="w-full text-center pt-2.5 pb-1 text-[11px] sm:text-xs md:text-sm text-slate-500">
+            <p class="flex items-center justify-center gap-1.5 flex-wrap">
+                <span>تصميم و تطوير:</span>
+                <a href="https://mamdouhmmo.github.io/MMO/" target="_blank" rel="noopener noreferrer"
+                    class="font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1">
+                    <i class="fa-solid fa-code text-[11px]"></i>
+                    <span>ممدوح عبد الهادي</span>
+                </a>
+                <span class="text-slate-300">•</span>
+                <span>جميع الحقوق محفوظة © <span id="currentYear"></span></span>
+            </p>
+        </footer>
+    </div>
 
     <!-- Interactive JavaScript -->
     <script>
@@ -903,4 +1070,5 @@
         }
     </script>
 </body>
+
 </html>
