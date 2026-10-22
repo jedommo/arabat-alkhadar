@@ -9,6 +9,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>عربة الخضار | خضار وفواكه ولحوم طازجة وعصائر طبيعية</title>
 
+    <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "z1n31nmn27");
+    </script>
+
     <!-- Google Fonts: Cairo & Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1079,6 +1088,18 @@
                 fallback.classList.remove('flex');
             }
         }
+
+        // Clarity Custom Events for Button Clicks
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('a, button').forEach(function (el) {
+                el.addEventListener('click', function () {
+                    const label = (this.getAttribute('aria-label') || this.innerText || this.title || this.id || 'unnamed_click').trim().replace(/\s+/g, ' ').slice(0, 50);
+                    if (window.clarity && label) {
+                        window.clarity("event", label);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 
