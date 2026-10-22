@@ -18,6 +18,16 @@
         })(window, document, "clarity", "script", "z1n31nmn27");
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8MTCETFCGE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8MTCETFCGE');
+    </script>
+
     <!-- Google Fonts: Cairo & Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1089,13 +1099,25 @@
             }
         }
 
-        // Clarity Custom Events for Button Clicks
+        // Tracking Custom Events for Button Clicks (Clarity & Google Analytics)
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('a, button').forEach(function (el) {
                 el.addEventListener('click', function () {
                     const label = (this.getAttribute('aria-label') || this.innerText || this.title || this.id || 'unnamed_click').trim().replace(/\s+/g, ' ').slice(0, 50);
+                    
+                    // إرسال الحدث إلى Microsoft Clarity
                     if (window.clarity && label) {
                         window.clarity("event", label);
+                    }
+
+                    // إرسال الحدث إلى Google Analytics
+                    if (typeof gtag === 'function' && label) {
+                        gtag('event', 'button_click', {
+                            'event_category': 'Engagement',
+                            'event_label': label,
+                            'button_text': label,
+                            'target_url': this.getAttribute('href') || ''
+                        });
                     }
                 });
             });
